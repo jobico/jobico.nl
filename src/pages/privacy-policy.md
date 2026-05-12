@@ -1,0 +1,84 @@
+---
+layout: ../layouts/Prose.astro
+title: Privacy Policy
+description: Privacy policy of JOBICO B.V., explaining how we handle your personal data in accordance with the GDPR.
+---
+
+<div class="notice">
+This privacy policy was last updated on <strong>12 May 2026</strong> and applies to the website <strong>jobico.nl</strong>.
+</div>
+
+## 1. Who is responsible for your data?
+
+The data controller for this website is:
+
+**JOBICO B.V.** (trading as John Billekens Consultancy)  
+Mars 5, 5482 SN Schijndel, Nederland  
+KvK: 99165589 · BTW: NL868838366B01  
+Contact: via the [contact form](/\#contact) on this website
+
+## 2. What personal data do we collect?
+
+We only collect personal data that you voluntarily provide through the contact form on this website. This may include:
+
+- Your name
+- Your email address
+- Your company name (optional)
+- The subject and content of your message
+
+We do not collect any other personal data. This website has no analytics tracking, no advertising pixels, and no third-party tracking cookies.
+
+## 3. Why do we process your data and on what legal basis?
+
+| Purpose | Legal basis (GDPR Art. 6) |
+|---|---|
+| Responding to your enquiry or request for information | Art. 6(1)(b): pre-contractual measures |
+| Following up on a potential business engagement | Art. 6(1)(f): legitimate interest |
+
+We do not use your data for any other purpose, and we do not send unsolicited marketing communications.
+
+## 4. Third-party processors
+
+To operate this website and handle form submissions, we use the following processors. Each has agreed to process your data only on our instructions.
+
+**Formspree, Inc.** (United States)  
+Your contact form submissions are delivered to us via Formspree. Formspree acts as a data processor and is bound by their [Data Processing Agreement](https://formspree.io/legal/privacy-policy/). Data is transferred to the US under Standard Contractual Clauses.
+
+**GitHub, Inc.** (United States)  
+This website is hosted on GitHub Pages. GitHub may process server logs (including IP addresses) as part of hosting operations. See [GitHub's Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement).
+
+## 5. Cookies and tracking
+
+This website does **not** use cookies for tracking or analytics purposes. All fonts are served from our own hosting; no requests are made to Google Fonts or any other external font service.
+
+The only cookies that may be set are strictly necessary technical cookies used by the hosting infrastructure (GitHub Pages). These do not require consent under the ePrivacy Directive.
+
+## 6. How long do we keep your data?
+
+We retain the content of contact form submissions for as long as necessary to respond to your enquiry and for a reasonable period thereafter, up to a maximum of **2 years**, unless a longer retention period is required by law or a business relationship develops.
+
+## 7. Your rights
+
+Under the GDPR you have the following rights with respect to your personal data:
+
+- **Right of access:** you may request a copy of the data we hold about you.
+- **Right to rectification:** you may ask us to correct inaccurate data.
+- **Right to erasure:** you may ask us to delete your data where there is no legitimate reason to continue processing it.
+- **Right to restriction:** you may ask us to restrict processing in certain circumstances.
+- **Right to data portability:** you may request your data in a structured, machine-readable format.
+- **Right to object:** you may object to processing based on legitimate interests.
+
+To exercise any of these rights, please use the [contact form](/\#contact) on this website. We will respond within **30 days**.
+
+## 8. Right to lodge a complaint
+
+If you believe we are not handling your personal data in accordance with the law, you have the right to lodge a complaint with the Dutch supervisory authority:
+
+**Autoriteit Persoonsgegevens**  
+Postbus 93374, 2509 AJ Den Haag  
+[autoriteitpersoonsgegevens.nl](https://www.autoriteitpersoonsgegevens.nl)  
+Telefoon: 088 180 52 50
+
+## 9. Changes to this policy
+
+We may update this privacy policy from time to time. The date at the top of this page always reflects the most recent version. For material changes we will update the date prominently.

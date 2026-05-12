@@ -1,0 +1,92 @@
+---
+---
+<script>
+  import 'vanilla-cookieconsent/dist/cookieconsent.css';
+  import * as CookieConsent from 'vanilla-cookieconsent';
+
+  CookieConsent.run({
+    categories: {
+      necessary: {
+        enabled: true,
+        readOnly: true,
+      },
+      analytics: {},
+    },
+
+    language: {
+      default: 'en',
+      translations: {
+        en: {
+          consentModal: {
+            title: 'This site respects your privacy',
+            description:
+              'We currently use no tracking or analytics cookies. If that ever changes, we will ask for your consent first. You can review and update your preferences at any time.',
+            acceptAllBtn: 'Accept all',
+            acceptNecessaryBtn: 'Necessary only',
+            showPreferencesBtn: 'Manage preferences',
+            footer: '<a href="/privacy-policy">Privacy Policy</a>',
+          },
+          preferencesModal: {
+            title: 'Cookie preferences',
+            acceptAllBtn: 'Accept all',
+            acceptNecessaryBtn: 'Necessary only',
+            savePreferencesBtn: 'Save preferences',
+            sections: [
+              {
+                title: 'How we use cookies',
+                description:
+                  'This site is built to be as privacy-friendly as possible. We self-host all fonts and run no tracking scripts. The table below shows exactly what is in use.',
+              },
+              {
+                title: 'Strictly necessary',
+                description:
+                  'Required for the site to function. No personal data is collected.',
+                linkedCategory: 'necessary',
+              },
+              {
+                title: 'Analytics',
+                description:
+                  'Not currently in use. If we add analytics in the future, it will appear here and require your consent before being activated.',
+                linkedCategory: 'analytics',
+              },
+              {
+                title: 'More information',
+                description:
+                  'For any questions about our cookie policy, please <a href="/#contact">get in touch</a>.',
+              },
+            ],
+          },
+        },
+      },
+    },
+  });
+</script>
+
+<style is:global>
+  :root {
+    --cc-bg: #ffffff;
+    --cc-primary-color: #0A2E50;
+    --cc-secondary-color: #4A6480;
+    --cc-btn-primary-bg: #1C7CD5;
+    --cc-btn-primary-color: #ffffff;
+    --cc-btn-primary-hover-bg: #0A2E50;
+    --cc-btn-secondary-bg: var(--cc-bg);
+    --cc-btn-secondary-color: var(--cc-primary-color);
+    --cc-btn-secondary-hover-bg: #e2eaf3;
+    --cc-cookie-category-block-bg: #F4F8FC;
+    --cc-cookie-category-block-border: #e2eaf3;
+    --cc-cookie-category-block-hover-bg: #e8f0f8;
+    --cc-cookie-category-block-hover-border: #1C7CD5;
+    --cc-cookie-category-expanded-block-bg: #F4F8FC;
+    --cc-toggle-on-bg: #1C7CD5;
+    --cc-toggle-off-bg: #cbd5e1;
+    --cc-toggle-readonly-bg: #B2EBF2;
+    --cc-separator-border-color: #e2eaf3;
+    --cc-footer-border-color: #e2eaf3;
+    --cc-footer-bg: #F4F8FC;
+    --cc-overlay-bg: rgba(10, 46, 80, 0.5);
+    --cc-modal-border-radius: 0.75rem;
+    --cc-btn-border-radius: 0.4rem;
+    --cc-font-family: 'Montserrat Variable', system-ui, sans-serif;
+  }
+</style>

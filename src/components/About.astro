@@ -1,0 +1,105 @@
+---
+---
+<section id="about" style="padding: 7rem 1.5rem; background: var(--color-bg);">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;">
+
+      <!-- Left: text -->
+      <div>
+        <p class="section-label reveal" style="margin-bottom: 1.5rem;">About me</p>
+        <h2 class="reveal reveal-delay-1" style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1.5rem;">
+          John Billekens,<br/>
+          <span style="color: var(--color-navy);">IT specialist</span>
+        </h2>
+        <p class="reveal reveal-delay-2" style="margin-bottom: 1.25rem; line-height: 1.8;">
+          Born in 1981 and based in Noord-Brabant, the Netherlands. Over 24 years in IT,
+          specialising in <strong style="color: var(--color-prussian);">End User Computing (EUC)</strong> and
+          <strong style="color: var(--color-prussian);">Digital Workspace</strong> solutions since 2013.
+        </p>
+        <p class="reveal reveal-delay-2" style="margin-bottom: 1.25rem; line-height: 1.8;">
+          As a freelance consultant I help organisations optimise their virtual workplaces.
+          I combine deep technical expertise with a pragmatic approach: no unnecessary complexity,
+          just working solutions that fit your organisation.
+        </p>
+        <p class="reveal reveal-delay-2" style="margin-bottom: 2.5rem; line-height: 1.8;">
+          Alongside consultancy work I maintain a technical blog at
+          <a href="https://blog.j81.nl" target="_blank" rel="noopener" style="color: var(--color-navy); text-decoration: underline; text-underline-offset: 3px;">blog.j81.nl</a>
+          and share scripts and knowledge with the broader IT community.
+        </p>
+        <div class="reveal reveal-delay-3">
+          <a href="/#contact" class="btn-primary">Get in touch</a>
+        </div>
+      </div>
+
+      <!-- Right: visual card -->
+      <div class="reveal reveal-delay-2" style="position: relative;">
+        <div style="
+          background: var(--color-prussian);
+          border-radius: 1rem;
+          padding: 2.5rem;
+          position: relative;
+          overflow: hidden;
+        ">
+          <div class="dot-grid" style="position: absolute; inset: 0; opacity: 0.2;"></div>
+
+          <div style="position: relative; z-index: 1;">
+            <img src="/logo.png" alt="JOBICO logo" style="width: 5rem; height: auto; margin-bottom: 2rem; filter: brightness(0) invert(1);" />
+
+            <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+              <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                <div style="width: 2.5rem; height: 2.5rem; background: rgba(178,235,242,0.12); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B2EBF2" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
+                <div>
+                  <p style="font-family: var(--font-display); font-weight: 600; color: white; font-size: 0.9rem;">EUC & Digital Workspace</p>
+                  <p style="color: rgba(178,235,242,0.65); font-size: 0.8rem; margin-top: 0.2rem;">Specialist since 2013</p>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                <div style="width: 2.5rem; height: 2.5rem; background: rgba(178,235,242,0.12); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B2EBF2" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                </div>
+                <div>
+                  <p style="font-family: var(--font-display); font-weight: 600; color: white; font-size: 0.9rem;">Citrix & NetScaler</p>
+                  <p style="color: rgba(178,235,242,0.65); font-size: 0.8rem; margin-top: 0.2rem;">Configuration & support</p>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                <div style="width: 2.5rem; height: 2.5rem; background: rgba(178,235,242,0.12); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B2EBF2" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </div>
+                <div>
+                  <p style="font-family: var(--font-display); font-weight: 600; color: white; font-size: 0.9rem;">Scripting & Automation</p>
+                  <p style="color: rgba(178,235,242,0.65); font-size: 0.8rem; margin-top: 0.2rem;">Deployment & management</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Accent square -->
+        <div aria-hidden="true" style="
+          position: absolute;
+          bottom: -1.5rem; right: -1.5rem;
+          width: 6rem; height: 6rem;
+          background: var(--color-blizzard);
+          border-radius: 0.5rem;
+          z-index: -1;
+        "></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    #about > div > div {
+      grid-template-columns: 1fr !important;
+      gap: 3rem !important;
+    }
+  }
+</style>

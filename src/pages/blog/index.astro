@@ -1,0 +1,78 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout
+  title="Blog – JOBICO"
+  description="Technical articles on EUC, Digital Workspace, Citrix and PowerShell by John Billekens."
+>
+  <div style="padding-top: 4.5rem; min-height: 100vh; background: var(--color-bg);">
+
+    <!-- Header -->
+    <header style="background: var(--color-prussian); padding: 5rem 1.5rem 4rem; position: relative; overflow: hidden;">
+      <div class="dot-grid" style="position: absolute; inset: 0; opacity: 0.15;"></div>
+      <div style="max-width: 1100px; margin: 0 auto; position: relative; z-index: 1;">
+        <p class="section-label" style="color: var(--color-aero); margin-bottom: 1.5rem;">Blog</p>
+        <h1 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; color: white; margin-bottom: 1rem;">
+          Technical articles
+        </h1>
+        <p style="color: rgba(178,235,242,0.7); max-width: 520px; line-height: 1.7; font-size: 1.05rem;">
+          In-depth articles on EUC, Digital Workspace, Citrix and PowerShell. Practical knowledge from the field.
+        </p>
+      </div>
+    </header>
+
+    <!-- Posts -->
+    <main style="max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem 6rem;">
+      {posts.length === 0 ? (
+        <div style="text-align: center; padding: 5rem 0;">
+          <p style="font-family: var(--font-display); font-size: 1.1rem; color: var(--color-slate);">No posts published yet. Check back soon.</p>
+        </div>
+      ) : (
+        <div style="display: grid; gap: 1.5rem;">
+          {posts.map(post => {
+            const slug = post.id.replace(/\.mdx?$/, '');
+            return (
+              <a href={`/blog/${slug}`} style="text-decoration: none;" class="post-card">
+                <article style="
+                  background: white; border: 1px solid #e2eaf3; border-radius: 0.75rem;
+                  padding: 2rem; display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: start;
+                ">
+                  <div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.75rem;">
+                      {post.data.tags.map((tag: string) => (
+                        <span style="font-family: var(--font-display); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-navy); background: var(--color-blizzard); padding: 0.2rem 0.6rem; border-radius: 2rem;">{tag}</span>
+                      ))}
+                    </div>
+                    <h2 style="font-size: 1.2rem; font-weight: 700; color: var(--color-prussian); margin-bottom: 0.5rem; line-height: 1.3;">{post.data.title}</h2>
+                    <p style="color: var(--color-slate); font-size: 0.9rem; line-height: 1.6;">{post.data.description}</p>
+                  </div>
+                  <div style="text-align: right; flex-shrink: 0;">
+                    <p style="font-family: var(--font-display); font-size: 0.75rem; color: #9ab0c4; white-space: nowrap;">
+                      {post.data.pubDate.toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' })}
+                    </p>
+                  </div>
+                </article>
+              </a>
+            );
+          })}
+        </div>
+      )}
+    </main>
+  </div>
+</Layout>
+
+<style>
+  .post-card article {
+    transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s, border-color 0.3s;
+  }
+  .post-card article:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(10, 46, 80, 0.09);
+    border-color: var(--color-aero);
+  }
+</style>

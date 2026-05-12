@@ -1,0 +1,71 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import CookieConsent from '../components/CookieConsent.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  darkHero?: boolean;
+}
+
+const {
+  title = 'JOBICO – John Billekens Consultancy',
+  description = 'Freelance IT consultant specialising in EUC, Digital Workspace and Citrix. Over 16 years of experience. Based in Noord-Brabant, the Netherlands.',
+  darkHero = true,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jobico.nl/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://jobico.nl/full-logo-800.png" />
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Nav darkHero={darkHero} />
+    <slot />
+    <Footer />
+    <CookieConsent />
+
+    <script>
+      // Scroll reveal
+      const observer = new IntersectionObserver(
+        (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+        { threshold: 0.12 }
+      );
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+      // Nav scroll effect — only toggle on pages with a dark hero
+      const nav = document.getElementById('main-nav');
+      const darkHero = nav?.dataset.darkHero === 'true';
+      if (darkHero) {
+        window.addEventListener('scroll', () => {
+          nav?.classList.toggle('nav-scrolled', window.scrollY > 40);
+        }, { passive: true });
+      }
+
+      // Mobile menu
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      menuBtn?.addEventListener('click', () => {
+        mobileMenu?.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>

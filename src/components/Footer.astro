@@ -1,0 +1,65 @@
+---
+const year = new Date().getFullYear();
+---
+<footer style="background: var(--color-prussian); padding: 4rem 1.5rem 2rem;">
+  <div style="max-width: 1100px; margin: 0 auto;">
+
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2.5rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(178,235,242,0.1);">
+
+      <!-- Brand + tagline -->
+      <div style="max-width: 280px;">
+        <img src="/full-logo-800.png" alt="JOBICO" style="height: 2rem; width: auto; margin-bottom: 1.25rem; filter: brightness(0) invert(1); opacity: 0.9;" />
+        <p style="color: rgba(178,235,242,0.6); font-size: 0.875rem; line-height: 1.7;">
+          Freelance IT consultancy specialising in EUC, Digital Workspace and Citrix. Based in Noord-Brabant, the Netherlands.
+        </p>
+      </div>
+
+      <div style="display: flex; gap: 3rem; flex-wrap: wrap;">
+
+        <!-- Navigation -->
+        <div>
+          <p style="font-family: var(--font-display); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(178,235,242,0.4); margin-bottom: 1rem;">Navigation</p>
+          <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+            <a href="/#about" style="color: rgba(178,235,242,0.7); text-decoration: none; font-size: 0.875rem; transition: color 0.2s;" onmouseover="this.style.color='#B2EBF2'" onmouseout="this.style.color='rgba(178,235,242,0.7)'">About</a>
+            <a href="/#services" style="color: rgba(178,235,242,0.7); text-decoration: none; font-size: 0.875rem; transition: color 0.2s;" onmouseover="this.style.color='#B2EBF2'" onmouseout="this.style.color='rgba(178,235,242,0.7)'">Services</a>
+            <a href="/#contact" style="color: rgba(178,235,242,0.7); text-decoration: none; font-size: 0.875rem; transition: color 0.2s;" onmouseover="this.style.color='#B2EBF2'" onmouseout="this.style.color='rgba(178,235,242,0.7)'">Contact</a>
+            <a href="https://blog.j81.nl" target="_blank" rel="noopener" style="color: rgba(178,235,242,0.7); text-decoration: none; font-size: 0.875rem; transition: color 0.2s;" onmouseover="this.style.color='#B2EBF2'" onmouseout="this.style.color='rgba(178,235,242,0.7)'">Blog ↗</a>
+          </div>
+        </div>
+
+        <!-- Business details -->
+        <div>
+          <p style="font-family: var(--font-display); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(178,235,242,0.4); margin-bottom: 1rem;">Business details</p>
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <p style="color: rgba(178,235,242,0.8); font-size: 0.875rem; font-weight: 600;">JOBICO B.V.</p>
+            <p style="color: rgba(178,235,242,0.55); font-size: 0.8rem;">John Billekens Consultancy</p>
+            <p style="color: rgba(178,235,242,0.6); font-size: 0.8rem; line-height: 1.5;">
+              Mars 5<br/>
+              5482 SN Schijndel<br/>
+              Nederland
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 0.3rem; margin-top: 0.5rem;">
+              <p style="color: rgba(178,235,242,0.5); font-size: 0.78rem;">
+                <span style="color: rgba(178,235,242,0.35); font-family: var(--font-display); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">KvK</span>&nbsp;&nbsp;99165589
+              </p>
+              <p style="color: rgba(178,235,242,0.5); font-size: 0.78rem;">
+                <span style="color: rgba(178,235,242,0.35); font-family: var(--font-display); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase;">BTW</span>&nbsp;&nbsp;NL868838366B01
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; padding-top: 2rem;">
+      <p style="color: rgba(178,235,242,0.35); font-size: 0.8rem;">
+        &copy; {year} JOBICO B.V. All rights reserved.
+        &nbsp;·&nbsp;
+        <a href="/privacy-policy" style="color: rgba(178,235,242,0.35); text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s;" onmouseover="this.style.color='rgba(178,235,242,0.6)'" onmouseout="this.style.color='rgba(178,235,242,0.35)'">Privacy Policy</a>
+      </p>
+    </div>
+
+  </div>
+</footer>

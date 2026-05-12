@@ -1,0 +1,101 @@
+---
+interface Props {
+  darkHero?: boolean;
+}
+const { darkHero = true } = Astro.props;
+---
+<style>
+  #main-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 50;
+    transition: background 0.3s, box-shadow 0.3s, backdrop-filter 0.3s;
+  }
+
+  /* Default: transparent nav sitting over the dark hero */
+  #main-nav .nav-logo {
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s;
+  }
+  #main-nav .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+  }
+  #main-nav .nav-link::after {
+    background: white;
+  }
+  #main-nav .nav-link:hover {
+    color: white;
+  }
+  #main-nav .burger-line {
+    fill: white;
+  }
+
+  /* Scrolled: frosted glass over light sections */
+  #main-nav.nav-scrolled {
+    background: rgba(244, 248, 252, 0.92);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 1px 0 rgba(10, 46, 80, 0.08);
+  }
+  #main-nav.nav-scrolled .nav-logo {
+    filter: none;
+  }
+  #main-nav.nav-scrolled .nav-link {
+    color: var(--color-prussian);
+  }
+  #main-nav.nav-scrolled .nav-link::after {
+    background: var(--color-navy);
+  }
+  #main-nav.nav-scrolled .nav-link:hover {
+    color: var(--color-navy);
+  }
+  #main-nav.nav-scrolled .burger-line {
+    fill: var(--color-prussian);
+  }
+
+  @media (max-width: 680px) {
+    .desktop-nav { display: none !important; }
+    .mobile-burger { display: flex !important; }
+  }
+</style>
+
+<nav id="main-nav" class={darkHero ? '' : 'nav-scrolled'} data-dark-hero={darkHero} aria-label="Main navigation">
+  <div style="max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 4.5rem;">
+
+    <!-- Logo -->
+    <a href="/#home" aria-label="JOBICO homepage">
+      <img
+        src="/full-logo-800.png"
+        alt="JOBICO – John Billekens Consultancy"
+        class="nav-logo"
+        style="height: 2.2rem; width: auto;"
+      />
+    </a>
+
+    <!-- Desktop links -->
+    <div style="display: flex; align-items: center; gap: 2.5rem;" class="desktop-nav">
+      <a href="/#about" class="nav-link">About</a>
+      <a href="/#services" class="nav-link">Services</a>
+      <a href="https://blog.j81.nl" target="_blank" rel="noopener" class="nav-link">Blog</a>
+      <a href="/#contact" class="btn-primary" style="padding: 0.6rem 1.4rem; font-size: 0.85rem;">Contact</a>
+    </div>
+
+    <!-- Mobile burger -->
+    <button id="menu-btn" aria-label="Open menu" style="display: none; background: none; border: none; cursor: pointer; padding: 0.5rem;" class="mobile-burger">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <rect y="4" width="22" height="2" rx="1" class="burger-line"/>
+        <rect y="10" width="22" height="2" rx="1" class="burger-line"/>
+        <rect y="16" width="22" height="2" rx="1" class="burger-line"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile menu (always light background) -->
+  <div id="mobile-menu" class="hidden" style="background: white; border-top: 1px solid #e2eaf3; padding: 1.5rem;">
+    <div style="display: flex; flex-direction: column; gap: 1.25rem; max-width: 1100px; margin: 0 auto;">
+      <a href="/#about" style="color: var(--color-prussian); text-decoration: none; font-family: var(--font-display); font-weight: 500; font-size: 0.875rem;" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About</a>
+      <a href="/#services" style="color: var(--color-prussian); text-decoration: none; font-family: var(--font-display); font-weight: 500; font-size: 0.875rem;" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Services</a>
+      <a href="https://blog.j81.nl" target="_blank" rel="noopener" style="color: var(--color-prussian); text-decoration: none; font-family: var(--font-display); font-weight: 500; font-size: 0.875rem;">Blog ↗</a>
+      <a href="/#contact" class="btn-primary" style="align-self: flex-start; padding: 0.7rem 1.5rem;" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contact</a>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Page not found – JOBICO" description="The requested page does not exist.">
+  <div style="
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: var(--color-prussian);
+    position: relative;
+    overflow: hidden;
+  " class="dot-grid">
+
+    <div aria-hidden="true" style="position: absolute; top: -200px; left: -200px; width: 600px; height: 600px; border-radius: 50%; border: 1px solid rgba(107,185,232,0.08); pointer-events: none;"></div>
+
+    <div style="text-align: center; position: relative; z-index: 1; max-width: 520px;">
+      <p style="font-family: var(--font-display); font-size: 8rem; font-weight: 800; color: rgba(178,235,242,0.08); line-height: 1; margin-bottom: -2rem;">404</p>
+      <img src="/logo.png" alt="JOBICO" style="width: 5rem; height: auto; margin: 0 auto 2rem;" />
+      <h1 style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 1rem;">Page not found</h1>
+      <p style="color: rgba(178,235,242,0.65); line-height: 1.7; margin-bottom: 2.5rem;">
+        The page you are looking for does not exist or has been moved.
+      </p>
+      <a href="/" class="btn-primary" style="display: inline-flex;">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Back to home
+      </a>
+    </div>
+  </div>
+</Layout>
