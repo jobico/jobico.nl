@@ -1,4 +1,7 @@
 ---
+const now = new Date();
+const itMonths = (now.getFullYear() - 2002) * 12 + (now.getMonth() - 5); // base: June 2002
+const itYears = Math.floor(itMonths / 12);
 ---
 <section id="about" style="padding: 7rem 1.5rem; background: var(--color-bg);">
   <div style="max-width: 1100px; margin: 0 auto;">
@@ -12,7 +15,7 @@
           <span style="color: var(--color-navy);">EUC Consultant</span>
         </h2>
         <p class="reveal reveal-delay-2" style="margin-bottom: 1.25rem; line-height: 1.8;">
-          Born in 1981 and based in Noord-Brabant, the Netherlands. Over 24 years in IT,
+          Born in 1981 and based in Noord-Brabant, the Netherlands. Over {itYears} years in IT,
           specialising in <strong style="color: var(--color-prussian);">End User Computing (EUC)</strong> and
           <strong style="color: var(--color-prussian);">Digital Workspace</strong> solutions since 2013.
         </p>
@@ -52,7 +55,7 @@
                 </div>
                 <div>
                   <p style="font-family: var(--font-display); font-weight: 600; color: white; font-size: 0.9rem;">EUC & Digital Workspace</p>
-                  <p style="color: rgba(178,235,242,0.65); font-size: 0.8rem; margin-top: 0.2rem;">Specialist since 2013</p>
+                  <p style="color: rgba(178,235,242,0.65); font-size: 0.8rem; margin-top: 0.2rem;">Specialist since 2010</p>
                 </div>
               </div>
 
