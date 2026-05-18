@@ -2,7 +2,7 @@
 ---
 <section id="contact" style="padding: 7rem 1.5rem; background: white;">
   <div style="max-width: 1100px; margin: 0 auto;">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;">
+    <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;">
 
       <!-- Left: info -->
       <div>
@@ -55,7 +55,7 @@
           style="display: flex; flex-direction: column; gap: 1.25rem;"
           id="contact-form"
         >
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-name-email" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
             <div>
               <label for="name" style="font-family: var(--font-display); font-size: 0.8rem; font-weight: 600; color: var(--color-prussian); display: block; margin-bottom: 0.4rem;">Name</label>
               <input type="text" id="name" name="name" required placeholder="Your name" class="form-input" />
@@ -119,9 +119,17 @@
 
 <style>
   @media (max-width: 768px) {
-    #contact > div > div {
+    .contact-grid {
       grid-template-columns: 1fr !important;
       gap: 3rem !important;
+    }
+  }
+  @media (max-width: 480px) {
+    .form-name-email {
+      grid-template-columns: 1fr !important;
+    }
+    #contact {
+      padding: 4rem 1.25rem !important;
     }
   }
 </style>

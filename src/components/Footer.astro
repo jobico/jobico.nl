@@ -1,7 +1,7 @@
 ---
 const year = new Date().getFullYear();
 ---
-<footer style="background: var(--color-prussian); padding: 4rem 1.5rem 2rem;">
+<footer class="site-footer" style="background: var(--color-prussian); padding: 4rem 1.5rem 2rem;">
   <div style="max-width: 1100px; margin: 0 auto;">
 
     <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2.5rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(178,235,242,0.1);">
@@ -63,3 +63,11 @@ const year = new Date().getFullYear();
 
   </div>
 </footer>
+
+<style>
+  @media (max-width: 560px) {
+    .site-footer {
+      padding: 3rem 1.25rem 2rem !important;
+    }
+  }
+</style>

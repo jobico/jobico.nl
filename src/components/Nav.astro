@@ -52,9 +52,11 @@ const { darkHero = true } = Astro.props;
     fill: var(--color-prussian);
   }
 
+  .mobile-burger { display: none; }
+
   @media (max-width: 680px) {
     .desktop-nav { display: none !important; }
-    .mobile-burger { display: flex !important; }
+    .mobile-burger { display: flex; }
   }
 </style>
 
@@ -80,7 +82,7 @@ const { darkHero = true } = Astro.props;
     </div>
 
     <!-- Mobile burger -->
-    <button id="menu-btn" aria-label="Open menu" style="display: none; background: none; border: none; cursor: pointer; padding: 0.5rem;" class="mobile-burger">
+    <button id="menu-btn" aria-label="Open menu" style="background: none; border: none; cursor: pointer; padding: 0.5rem;" class="mobile-burger">
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
         <rect y="4" width="22" height="2" rx="1" class="burger-line"/>
         <rect y="10" width="22" height="2" rx="1" class="burger-line"/>

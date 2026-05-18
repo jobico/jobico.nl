@@ -2,7 +2,7 @@
 ---
 <section id="about" style="padding: 7rem 1.5rem; background: var(--color-bg);">
   <div style="max-width: 1100px; margin: 0 auto;">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;">
+    <div class="about-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;">
 
       <!-- Left: text -->
       <div>
@@ -97,9 +97,14 @@
 
 <style>
   @media (max-width: 768px) {
-    #about > div > div {
+    .about-grid {
       grid-template-columns: 1fr !important;
       gap: 3rem !important;
+    }
+  }
+  @media (max-width: 640px) {
+    #about {
+      padding: 4rem 1.25rem !important;
     }
   }
 </style>
