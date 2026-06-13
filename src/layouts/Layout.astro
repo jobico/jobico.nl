@@ -13,7 +13,7 @@ interface Props {
 const {
   title = 'JOBICO – John Billekens Consultancy',
   description = 'Freelance IT consultant specialising in EUC, Digital Workspace and Citrix. Over 16 years of experience. Based in Noord-Brabant, the Netherlands.',
-  darkHero = true,
+  darkHero = false,
 } = Astro.props;
 ---
 
@@ -38,7 +38,7 @@ const {
     <title>{title}</title>
   </head>
   <body>
-    <Nav darkHero={darkHero} />
+    <Nav />
     <slot />
     <Footer />
     <CookieConsent />
@@ -51,14 +51,12 @@ const {
       );
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-      // Nav scroll effect — only toggle on pages with a dark hero
+      // Nav scroll effect — hairline border + blur once scrolled
       const nav = document.getElementById('main-nav');
-      const darkHero = nav?.dataset.darkHero === 'true';
-      if (darkHero) {
-        window.addEventListener('scroll', () => {
-          nav?.classList.toggle('nav-scrolled', window.scrollY > 40);
-        }, { passive: true });
-      }
+      window.addEventListener('scroll', () => {
+        nav?.classList.toggle('nav-scrolled', window.scrollY > 40);
+      }, { passive: true });
+      nav?.classList.toggle('nav-scrolled', window.scrollY > 40);
 
       // Mobile menu
       const menuBtn = document.getElementById('menu-btn');
