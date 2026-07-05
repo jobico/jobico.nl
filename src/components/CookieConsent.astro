@@ -4,6 +4,18 @@
   import 'vanilla-cookieconsent/dist/cookieconsent.css';
   import * as CookieConsent from 'vanilla-cookieconsent';
 
+  // Pass the current analytics choice to Microsoft Clarity. When granted,
+  // Clarity upgrades from cookieless mode to full tracking; when denied it
+  // deletes its cookies and drops back to no-consent mode.
+  function syncClarityConsent() {
+    if (typeof window.clarity !== 'function') return;
+    const granted = CookieConsent.acceptedCategory('analytics');
+    window.clarity('consentv2', {
+      ad_Storage: 'denied',
+      analytics_Storage: granted ? 'granted' : 'denied',
+    });
+  }
+
   CookieConsent.run({
     categories: {
       necessary: {
@@ -13,6 +25,11 @@
       analytics: {},
     },
 
+    // Fires on every page load once a choice exists, and on first consent.
+    onConsent: syncClarityConsent,
+    // Fires when the visitor later changes their preferences.
+    onChange: syncClarityConsent,
+
     language: {
       default: 'en',
       translations: {
@@ -20,7 +37,7 @@
           consentModal: {
             title: 'This site respects your privacy',
             description:
-              'We currently use no tracking or analytics cookies. If that ever changes, we will ask for your consent first. You can review and update your preferences at any time.',
+              'We use Microsoft Clarity to understand how the site is used. Until you accept, it runs in a cookieless mode that collects only anonymous, aggregated data. Accepting analytics enables session insights and heatmaps. You can review and update your preferences at any time.',
             acceptAllBtn: 'Accept all',
             acceptNecessaryBtn: 'Necessary only',
             showPreferencesBtn: 'Manage preferences',
@@ -35,7 +52,7 @@
               {
                 title: 'How we use cookies',
                 description:
-                  'This site is built to be as privacy-friendly as possible. We self-host all fonts and run no tracking scripts. The table below shows exactly what is in use.',
+                  'This site is built to be as privacy-friendly as possible. We self-host all fonts and use only Microsoft Clarity for analytics, which stays cookieless until you consent. The sections below show exactly what is in use.',
               },
               {
                 title: 'Strictly necessary',
@@ -46,8 +63,32 @@
               {
                 title: 'Analytics',
                 description:
-                  'Not currently in use. If we add analytics in the future, it will appear here and require your consent before being activated.',
+                  'Microsoft Clarity helps us understand how visitors use the site through aggregated metrics, session recordings and heatmaps. Before you consent it runs in a cookieless mode with no persistent identifier. Accepting this category lets Clarity set its cookies (_clck, _clsk) and link your visit into a session so these features work fully.',
                 linkedCategory: 'analytics',
+                cookieTable: {
+                  headers: {
+                    name: 'Cookie',
+                    domain: 'Domain',
+                    description: 'Description',
+                    expiration: 'Expiration',
+                  },
+                  body: [
+                    {
+                      name: '_clck',
+                      domain: 'jobico.nl',
+                      description:
+                        'Microsoft Clarity — persists a Clarity user ID and preferences across visits.',
+                      expiration: '1 year',
+                    },
+                    {
+                      name: '_clsk',
+                      domain: 'jobico.nl',
+                      description:
+                        'Microsoft Clarity — connects multiple page views into a single session recording.',
+                      expiration: '1 day',
+                    },
+                  ],
+                },
               },
               {
                 title: 'More information',
